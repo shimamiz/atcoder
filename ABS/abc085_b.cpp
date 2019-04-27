@@ -10,12 +10,21 @@ int main()
     int n;
 
     cin >> n;
-    int x[n];
-
+    int x[128];
+    fill_n(x, 100, 0);
     for (int i = 0; i < n; i++) {
-        cin >> x[i];
+        int a;
+        cin >> a;
+        x[a-1] = 1;
     }
 
-    sort(x, x+n, greater<int>());
+    int count = 0;
+    for (int i = 0; i < 100; i++) {
+        if (x[i] == 1) {
+            count++;
+        }
+    }
+    cout << count << endl;
 
+    return (0);
 }
